@@ -1,0 +1,615 @@
+* {
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: #fff;
+    background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee 0.1em, transparent 0.1em);
+    background-size: 100% 1.2em;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+h2, h3 {
+    font-family: 'Varela Round', sans-serif;
+}
+button {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 600;
+    background: transparent;
+    padding: 0.5em 1em;
+    border: 2px groove rgba(150, 150, 150, 0.5);
+}
+textarea {
+    border: 2px solid #222;
+    font-family: 'Varela Round', sans-serif;
+}
+input, select {
+    border: none;
+    border-bottom: 2px groove #222;
+    font-family: 'Varela Round', sans-serif;
+    height: 2rem;
+    font-size: 1.5rem;
+}
+.error {
+    color: red;
+    margin: 0.2em 0;
+    font-size: 0.8rem;
+    text-align: center;
+}
+.loading {
+    min-height: 100%;
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+.loading .loading-line {
+    min-height: 100vh;
+    width: 10%;
+    background: rgba(150, 150, 150, 0.2);
+    animation: loading 0.8s linear infinite;
+}
+/* KEYFRAMES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+   }
+    to {
+        opacity: 1;
+   }
+}
+@keyframes navOpen {
+    from {
+        left: -20vh;
+   }
+    to {
+        left: 0;
+   }
+}
+@keyframes navClose {
+    from {
+        left: 0;
+   }
+    to {
+        left: -20vh;
+   }
+}
+@keyframes loading {
+    from {
+        width: 0%;
+   }
+    to {
+        width: 500%;
+   }
+}
+/* HOME STYLES */
+.home header {
+    position: relative;
+}
+.home header .header-img {
+    width: 100%;
+    height: 100vh;
+}
+.home header .header-text {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    z-index: 1030;
+    color: #abcef8 !important;
+}
+.home header .header-text h2 {
+    font-size: 5rem;
+    color: #abcef8 !important;
+}
+.home header .header-text h3:nth-of-type(1) {
+    font-size: 4rem;
+    text-align: right;
+}
+.home header .header-text h3:nth-of-type(2), .home header .header-text h3:nth-of-type(3) {
+    font-size: 3rem;
+    color: #abcef8 !important;
+    text-align: right;
+}
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .home header .header-text {
+        padding: 1em;
+        top: 5em !important;
+   }
+    .home header .header-text h2 {
+        font-size: 3rem;
+        margin: 0;
+        background: #fff;
+   }
+    .home header .header-text h3:nth-of-type(1) {
+        font-size: 2.5rem;
+        margin: 2em 0;
+        margin-left: auto;
+        width: 55%;
+        background: #fff;
+   }
+    .home header .header-text h3:nth-of-type(2), .home header .header-text h3:nth-of-type(3) {
+        font-size: 1.5rem;
+        margin: 3em 0;
+        width: 40%;
+        margin-left: auto;
+        background: #fff;
+   }
+}
+/* CAROUSEL STYLES */
+.carousel {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.carousel img {
+    animation: fadeIn 0.5s linear;
+}
+.carousel .carousel-indicators {
+    position: absolute;
+    display: flex;
+}
+.carousel .carousel-indicators .carousel-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 2px solid #222;
+    z-index: 1030;
+    padding: 1px;
+    margin: 1em;
+}
+.carousel .carousel-indicators .carousel-indicator .carousel-indicator-fill {
+    height: 80%;
+    width: 80%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    background: #222;
+    margin: 0;
+}
+/* NAVBAR STYLES */
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    max-width: 100%;
+}
+.mainNav .logoHome {
+    display: flex;
+    align-items: center;
+}
+.mainNav .logoHome .logo-text {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 2rem;
+}
+.mainNav .auth-profile-thumbnail {
+    display: flex;
+    align-items: center;
+}
+.mainNav .auth-profile-thumbnail .auth-profile-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 1px solid #222;
+    margin: 0 1em;
+}
+.mainNav .navLinksRight a {
+    padding: 0.5em;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.5rem;
+}
+.mainNav .navLinksRight button {
+    font-size: 1.2rem;
+}
+/* SIDENAV STYLES */
+.sidenav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+}
+.sidenav-container .nav-toggle {
+    margin: 1em;
+}
+.sidenav-container .side-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 20vw;
+    height: 100vh;
+    background: rgba(150, 150, 150, 0.5);
+    font-weight: 600;
+    animation: navOpen 0.2s linear;
+}
+.sidenav-container .side-nav .logo-home {
+    margin: 1em;
+}
+.sidenav-container .side-nav .auth-profile-thumbnail {
+    display: flex;
+    align-items: center;
+}
+.sidenav-container .side-nav .auth-profile-thumbnail .auth-profile-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 1px solid #222;
+    margin: 0 1em;
+}
+.sidenav-container .side-nav .nav-links {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    line-height: 2rem;
+}
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .sidenav-container .side-nav {
+        width: 50vw;
+   }
+}
+/* SIGNIN/SIGNPUT STYLES */
+.signin, .signup {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
+.signin .signinForm, .signup .signinForm, .signin .signupForm, .signup .signupForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 50%;
+}
+.signin .signinForm input, .signup .signinForm input, .signin .signupForm input, .signup .signupForm input {
+    width: 50%;
+    margin: 1em;
+}
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .signin .signinForm, .signup .signinForm, .signin .signupForm, .signup .signupForm {
+        width: 100%;
+   }
+    .signin input, .signup input {
+        width: 80% !important;
+   }
+}
+/* ADDRECIPE STYLES */
+.add-recipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-recipe .add-recipe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 30%;
+    margin-top: 3em;
+}
+.add-recipe .add-recipe-form input, .add-recipe .add-recipe-form select, .add-recipe .add-recipe-form textarea {
+    width: 80%;
+    margin: 1em;
+}
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .add-recipe .add-recipe-form {
+        width: 100%;
+        height: 100%;
+   }
+}
+/* RECIPEPAGE STYLES */
+.recipe-page {
+    padding: 0 1em;
+}
+.recipe-page h2 {
+    text-align: center;
+    margin-bottom: 3em;
+}
+/* RECIPEITEM STYLES */
+.recipe-item {
+    display: flex;
+    height: 40vh;
+    width: 60%;
+    padding: 1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background: #fff;
+    margin: 2em auto;
+}
+.recipe-item h2, .recipe-item h3 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+.recipe-item .recipe-thumbnail {
+    max-height: 100%;
+    width: auto;
+}
+.recipe-item .recipe-overview {
+    padding: 0 1em;
+    width: 50%;
+}
+.recipe-item .recipe-overview .item-likes {
+    display: flex;
+    align-self: center;
+}
+.recipe-item .recipe-overview .item-likes span {
+    margin: auto 0;
+    font-weight: 600;
+}
+.recipe-item .recipe-overview .item-likes img {
+    margin: 0 1em;
+}
+.recipe-item button {
+    display: block;
+    width: 80%;
+    font-size: 1.5rem;
+    margin: 2.2em;
+}
+/* MOBILERECIPEITEM STYLES */
+.mobile-recipe-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em auto;
+    padding: 1em;
+    width: 90%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.mobile-recipe-item img {
+    max-width: 100%;
+    height: auto;
+}
+.mobile-recipe-item a {
+    width: 100%;
+}
+.mobile-recipe-item a button {
+    width: 100%;
+}
+/* SEARCH STYLES */
+.search {
+    padding: 1em;
+}
+.search .search-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search .search-input-container p {
+    font-size: 2rem;
+}
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .search .search-input-container {
+        margin-top: 4em;
+   }
+}
+/* SINGLERECIPE STYLES */
+.single-recipe {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    min-height: 80vh;
+}
+.single-recipe .recipe-info-top {
+    display: flex;
+    max-width: 80%;
+    height: 50vh;
+    margin: 0 auto;
+}
+.single-recipe .recipe-info-top .recipe-picture {
+    flex: 1;
+    padding: 1em;
+    max-width: 50%;
+}
+.single-recipe .recipe-info-top .recipe-picture .recipe-img {
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+.single-recipe .recipe-info-top .recipe-info-overview {
+    flex: 1;
+    line-height: 2rem;
+}
+.single-recipe .recipe-info-top .recipe-info-overview .recipe-likes {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.single-recipe .recipe-info-top .recipe-info-overview .recipe-likes img {
+    margin: 1em;
+}
+.single-recipe .recipe-info-top .recipe-info-overview .recipe-likes .likeBtn {
+    background: transparent;
+    border: none;
+    margin: 0 1em;
+    outline: none;
+}
+.single-recipe .recipe-instructions {
+    margin: 1em auto;
+    width: 80%;
+    text-align: center;
+}
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .single-recipe {
+        flex-direction: column;
+        width: 100% !important;
+        padding: 0;
+   }
+    .single-recipe .recipe-info-top {
+        flex-direction: column;
+        min-width: 100% !important;
+        margin-top: 2em;
+        min-height: 80vh;
+   }
+    .single-recipe .recipe-info-top .recipe-picture {
+        max-width: 100%;
+   }
+    .single-recipe .recipe-info-top .recipe-picture .recipe-img {
+        margin: 0;
+        max-width: 100% !important;
+        height: auto;
+   }
+    .single-recipe .recipe-info-top .recipe-info-overview {
+        height: 100vh;
+        flex-direction: column;
+        padding: 1em;
+   }
+}
+/* PROFILE STYLES */
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    padding: 1em;
+}
+.profile .user-info {
+    display: flex;
+    width: 80%;
+    height: 50vh;
+}
+.profile .user-info .profile-pic-container {
+    flex: 1;
+    padding: 1em;
+    max-width: 50%;
+}
+.profile .user-info .profile-pic-container .profile-pic {
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+.profile .user-info .profile-overview {
+    flex: 1;
+    line-height: 2rem;
+}
+.profile .user-info .edit-profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+.profile .user-info .edit-profile .modal {
+    width: 30vw;
+    min-height: 50vh;
+    background: #efefef;
+    padding: 1em;
+    text-align: center;
+}
+.profile .user-info .edit-profile .modal .edit-profile-form {
+    display: flex;
+    flex-direction: column;
+}
+.profile .user-info .edit-profile .modal .edit-profile-form input, .profile .user-info .edit-profile .modal .edit-profile-form textarea {
+    margin: 1em 0;
+}
+.profile .user-info .edit-profile .modal img {
+    max-width: 80%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+.profile .favorites-and-recipes {
+    display: flex;
+    width: 80%;
+}
+.profile .favorites-and-recipes .user-favorites {
+    flex: 1;
+    padding: 1em;
+}
+.profile .favorites-and-recipes .user-favorites .user-favorite {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1em 0;
+}
+.profile .favorites-and-recipes .user-favorites .user-favorite a {
+    display: flex;
+    align-items: center;
+}
+.profile .favorites-and-recipes .user-favorites .user-favorite a .user-favorite-img {
+    height: 50px;
+    width: auto;
+}
+.profile .favorites-and-recipes .user-favorites .user-favorite a span {
+    margin: 1em;
+}
+.profile .favorites-and-recipes .user-recipes {
+    flex: 1;
+    padding: 1em;
+}
+.profile .favorites-and-recipes .user-recipes .user-recipe {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1em 0;
+}
+.profile .favorites-and-recipes .user-recipes .user-recipe button {
+    margin-left: auto;
+}
+.profile .favorites-and-recipes .user-recipes .user-recipe a {
+    display: flex;
+    align-items: center;
+}
+.profile .favorites-and-recipes .user-recipes .user-recipe a .user-recipe-img {
+    height: 50px;
+    width: auto;
+}
+.profile .favorites-and-recipes .user-recipes .user-recipe a span {
+    margin: 1em;
+}
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .profile {
+        flex-direction: column;
+        padding: 1em;
+        max-width: 100%;
+   }
+    .profile .user-info {
+        margin-top: 2em;
+        display: flex;
+        min-width: 100%;
+        height: 100vh;
+        flex-direction: column;
+   }
+    .profile .user-info .profile-pic-container {
+        padding: 0;
+        min-width: 100% !important;
+        max-height: 50%;
+   }
+    .profile .user-info .profile-pic-container .profile-pic {
+        width: auto;
+        max-width: 100%;
+   }
+    .profile .user-info .profile-overview {
+        min-width: 100%;
+   }
+    .profile .user-info .edit-bio-btn {
+        margin: auto;
+        width: 100%;
+   }
+    .profile .user-info .edit-profile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh !important;
+        width: 100% !important;
+   }
+    .profile .user-info .edit-profile .modal {
+        width: 80%;
+        margin: auto;
+   }
+    .profile .favorites-and-recipes {
+        flex-direction: column;
+        min-width: 100vw;
+   }
+}
